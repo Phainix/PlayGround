@@ -1,6 +1,6 @@
 # 100 days of css
 
-![Header/intro section ](./design/Thermostat.png)
+![Header/intro section ](../design/Thermostat.png)
 
 ## Welcome! 👋 
 
