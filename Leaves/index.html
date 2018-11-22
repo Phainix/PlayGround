@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Leaves</title>
+	<link rel="stylesheet" href="">
+	<style>
+		html, body {
+			padding: 0;
+		    margin: 0;
+		    width: 100vw;
+		    height: 100vh;
+		    overflow: hidden;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    font-size: 1.7vw;
+		    font-family: 'Open Sans', sans-serif;
+		    letter-spacing: .5px;
+		    line-height: 1;
+		}
+		p, h3 {
+			margin:0;
+		}
+		.container {
+			width: 50vw;
+			height: 50vw;
+			border-radius: 2px;
+			box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+			background: #16A078;
+  			color: #333;
+  			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		.leaves {
+			width: 50%;
+			height: 50%;
+			position: relative;
+			animation-name: rotate;
+    		animation-duration: 9s;
+    		animation-iteration-count: infinite;
+    		/*animation-direction: alternate-reverse;*/
+    		animation-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
+    		transform-origin: center;
+    		transform: scale(.5);
+		}
+		@keyframes rotate {
+		    0% {
+		    	transform: scale(.5);
+		    }
+		    50% {
+		    	transform: rotate(-180deg) scale(1);
+		    }
+		    100% {
+		    	transform: rotate(0deg) scale(.5);
+		    }
+		}
+		.leaf {
+			width: 50%;
+			height: 50%;
+			background-color: #fff;
+			position: absolute;
+			border-radius: 3px 90% 3px 90%;
+			transform-origin: right bottom;
+			animation-name: shadow;
+    		animation-duration: 9s;
+    		animation-iteration-count: infinite;
+    		box-shadow: none;
+		}
+		@keyframes shadow {
+		    0% {
+		    	box-shadow: none;
+		    }
+		    50% {
+		    	box-shadow: -11px -11px 6px #00000026
+		    }
+		}
+		.center-circle {
+			width: 40%;
+			height: 40%;
+			position: absolute;
+			z-index: 3;
+			background-color: #f1c40f;
+			border-radius: 50%;
+			left: 30%;
+    		top: 30%;
+    		transform: scale(0);
+    		animation-name: grow;
+    		animation-duration: 9s;
+    		animation-iteration-count: infinite;
+    		animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+		}
+		@keyframes grow {
+		    0% {
+		    	transform: scale(0);
+		    }
+		    10% {
+		    	transform: scale(0);
+		    }
+		    25% {
+		    	transform: scale(1);
+		    }
+		    50% {
+		    	transform: scale(1);
+		    }
+		    70% {
+		    	transform: scale(0);
+		    }
+		}
+		.leaf:nth-of-type(odd) {
+			z-index: 1;
+			/*box-shadow: -11px -11px 6px #00000026*/
+		}
+		.leaf:nth-of-type(even) {
+			z-index: 2;
+			/*box-shadow: -10px -10px 6px #00000026;*/
+		}
+		.leaf:nth-of-type(1) {
+			transform: none;
+		}
+		.leaf:nth-of-type(2) {
+			transform: rotate(20deg);
+		}
+		.leaf:nth-of-type(3) {
+			transform: rotate(40deg);
+		}
+		.leaf:nth-of-type(4) {
+			transform: rotate(60deg);
+		}
+		.leaf:nth-of-type(5) {
+			transform: rotate(80deg);
+		}
+		.leaf:nth-of-type(6) {
+			transform: rotate(100deg);
+		}
+		.leaf:nth-of-type(7) {
+			transform: rotate(120deg);
+		}
+		.leaf:nth-of-type(8) {
+			transform: rotate(140deg);
+		}
+		.leaf:nth-of-type(9) {
+			transform: rotate(160deg);
+		}
+		.leaf:nth-of-type(10) {
+			transform: rotate(180deg);
+		}
+		.leaf:nth-of-type(11) {
+			transform: rotate(200deg);
+		}
+		.leaf:nth-of-type(12) {
+			transform: rotate(220deg);
+		}
+		.leaf:nth-of-type(13) {
+			transform: rotate(240deg);
+		}
+		.leaf:nth-of-type(14) {
+			transform: rotate(260deg);
+		}
+		.leaf:nth-of-type(15) {
+			transform: rotate(280deg);
+		}
+		.leaf:nth-of-type(16) {
+			transform: rotate(300deg);
+		}
+		.leaf:nth-of-type(17) {
+			transform: rotate(320deg);
+		}
+		.leaf:nth-of-type(18) {
+			transform: rotate(340deg);
+		}
+		/*.leaves {
+			width: 50%;
+			height: 50%;
+			position: relative;
+		}
+		.leaf {
+			width: 50%;
+			height: 50%;
+			background-color: #fff;
+			position: absolute;
+			box-shadow: -1px -4px 5px #999;
+			border-radius: 3px 90% 3px 90%;
+			transform-origin: right bottom;
+		}
+		.leaf:nth-of-type(1) {
+			z-index: 1;
+			transform: none;
+		}
+		.leaf:nth-of-type(2) {
+			z-index: 2;
+			transform: rotate(20deg);
+		}
+		.leaf:nth-of-type(3) {
+			z-index: 3;
+			transform: rotate(40deg);
+		}
+		.leaf:nth-of-type(4) {
+			z-index: 4;
+			transform: rotate(60deg);
+		}
+		.leaf:nth-of-type(5) {
+			z-index: 5;
+			transform: rotate(80deg);
+		}
+		.leaf:nth-of-type(6) {
+			z-index: 6;
+			transform: rotate(100deg);
+		}
+		.leaf:nth-of-type(7) {
+			z-index: 7;
+			transform: rotate(120deg);
+		}
+		.leaf:nth-of-type(8) {
+			z-index: 8;
+			transform: rotate(140deg);
+		}
+		.leaf:nth-of-type(9) {
+			z-index: 9;
+			transform: rotate(160deg);
+		}
+		.leaf:nth-of-type(10) {
+			z-index: 10;
+			transform: rotate(180deg);
+		}
+		.leaf:nth-of-type(11) {
+			z-index: 11;
+			transform: rotate(200deg);
+		}
+		.leaf:nth-of-type(12) {
+			z-index: 12;
+			transform: rotate(220deg);
+		}
+		.leaf:nth-of-type(13) {
+			z-index: 13;
+			transform: rotate(240deg);
+		}
+		.leaf:nth-of-type(14) {
+			z-index: 14;
+			transform: rotate(260deg);
+		}
+		.leaf:nth-of-type(15) {
+			z-index: 15;
+			transform: rotate(280deg);
+		}
+		.leaf:nth-of-type(16) {
+			z-index: 16;
+			transform: rotate(300deg);
+		}
+		.leaf:nth-of-type(17) {
+			z-index: 17;
+			transform: rotate(320deg);
+		}
+		.leaf:nth-of-type(18) {
+			z-index: 18;
+			transform: rotate(340deg);
+		}*/
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="leaves">
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="leaf"></div>
+			<div class="center-circle"></div>
+		</div>
+	</div>
+</body>
+</html>
