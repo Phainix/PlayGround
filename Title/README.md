@@ -9,4 +9,4 @@ Thanks for checking out this front-end coding challenge.
 **This challenge was implemented with HTML and CSS.**
 
 ## My CodePen
-hhttps://codepen.io/phainix/pen/dQrxJO
+https://codepen.io/phainix/pen/dQrxJO
