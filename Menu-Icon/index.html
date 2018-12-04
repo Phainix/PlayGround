@@ -40,13 +40,16 @@
 			justify-content: center;
     		align-items: center;
 		}
+		.menu:hover {
+			cursor: pointer;
+		}
 		.menu-line {
 			width: 110px;
 			height: 9px;
 			background-color: white;
 			box-shadow: 0px 0px 10px #38353570;
 			border-radius: 5px;
-			animation-direction: alternate;
+			transform-origin: center;
 		}
 		.menu .menu-line:nth-of-type(1) {
 			margin-bottom: 20px;
@@ -54,11 +57,26 @@
 		.menu .menu-line:nth-of-type(3) {
 			margin-top: 20px;
 		}
-		/*.frame:hover .menu-line:nth-of-type(2) {
-			animation-name: no-margin;
-			animation-duration: 1s;
+
+		.menu-line:nth-of-type(1) {
+			animation-name: animate11;
+			animation-duration: .8s;
 			animation-fill-mode: forwards;
-		}*/
+			animation-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
+		}
+		.menu-line:nth-of-type(2) {
+			animation-name: animate21;
+			animation-duration: .8s;
+			animation-fill-mode: forwards;
+			animation-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
+		}
+		.menu-line:nth-of-type(3) {
+			animation-name: animate31;
+			animation-duration: .8s;
+			animation-fill-mode: forwards;
+			animation-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
+		}
+
 		.animate.menu-line:nth-of-type(1) {
 			animation-name: animate1;
 			animation-duration: .8s;
@@ -91,7 +109,6 @@
 			}
 			100% {
 				transform: rotate(45deg);
-				transform-origin: center;
 				margin: -9px 0px;
 			}
 		}
@@ -104,7 +121,6 @@
 			}
 			100% {
 				transform: rotate(135deg);
-				transform-origin: center;
 				margin: 0px;
 			}
 		}
@@ -117,11 +133,65 @@
 			}
 			100% {
 				transform: rotate(135deg);
-				transform-origin: center;
 				margin: -9px 0px;
 			}
 		}
+
+		@keyframes animate11 {
+			0% {
+				transform: rotate(45deg);
+				margin: -9px 0px;
+			}
+			45% {
+				transform: rotate(0deg);
+				margin: -9px 0px;
+			}
+			55% {
+				transform: rotate(0deg);
+				margin: -9px 0px;
+			}
+			100% {
+				margin: 0px 0px 20px;
+			}
+		}
+		@keyframes animate21 {
+			0% {
+				transform: rotate(135deg);
+				margin: 0px;
+			}
+			45% {
+				transform: rotate(0deg);
+				margin: 0px;
+			}
+			60% {
+				transform: rotate(0deg);
+				margin: 0px;
+			}
+			100% {
+				margin: 0px;
+			}
+		}
+		@keyframes animate31 {
+			0% {
+				transform: rotate(135deg);
+				margin: -9px 0px;
+			}
+			45% {
+				transform: rotate(0deg);
+				margin: -9px 0px;
+			}
+			60% {
+				transform: rotate(0deg);
+				margin: -9px 0px;
+			}
+			100% {
+				margin: 20px 0px 0px;
+			}
+		}
 	</style>
+
+
+
 </head>
 <body>
 	<div class="frame">
@@ -138,7 +208,8 @@
 			var x = document.getElementsByClassName("menu-line")
 			var i;
 			for (i = 0; i < x.length; i++) {
-			    x[i].classList.toggle("animate");
+				x[i].classList.remove("no-animation");
+				x[i].classList.toggle("animate");//.remove('no-animation');
 			}
 		});
 	</script>

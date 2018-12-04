@@ -1,4 +1,4 @@
-# 100 days of css day 1
+# 100 days of css day 2
 
 ![Header/intro section ](../design/Menu_Icon.png)
 
@@ -6,7 +6,7 @@
 
 Thanks for checking out this front-end coding challenge. 
 
-**This challenge was implemented with HTML and CSS.**
+**This challenge was implemented with HTML, CSS and Javascript.**
 
 ## My CodePen
-https://codepen.io/phainix/pen/dQrxJO
+https://codepen.io/phainix/pen/zMXywQ
