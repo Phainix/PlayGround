@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pyramide</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+	<style>
+		html, body {
+			padding: 0;
+		    margin: 0;
+		    width: 100vw;
+		    height: 100vh;
+		    overflow: hidden;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    font-size: 16px;
+		    font-family: 'Open Sans', sans-serif;
+		    letter-spacing: .5px;
+		    line-height: 1;
+		    color: white;
+		}
+		.frame {
+			width: 400px;
+			height: 400px;
+			border-radius: 2px;
+			box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+			background-color: #272C34;
+  			color: #fff;
+  			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		.world {
+			width: 200px;
+		    height: 200px;
+		    background-color: #7DDFFC;
+		    border-radius: 50%;
+		    background: linear-gradient(to bottom, #7DDFFC 65%, #F0DE75 35%);
+		    position: relative;
+		    overflow: hidden;
+		    animation-name: brightness;
+		    animation-duration: 5s;
+		    animation-iteration-count: infinite;
+		    opacity: 0
+		}
+		.sun {
+			width: 35px;
+		    height: 35px;
+		    background: #f18630f2;
+		    border-radius: 50%;
+		    position: absolute;
+		    top: 10px;
+    		left: 84.5px;
+    		box-shadow: 0px 0px 5px #e0d418c7;
+    		animation-name: rise-and-set;
+		    animation-duration: 5s;
+		    animation-iteration-count: infinite;
+		    animation-timing-function: ease-in-out;
+		    transform-origin: -5px 100px;
+    		transform: rotate(-100deg);
+		}
+		.pyramide {
+		    width: 120px;
+		    height: 60px;
+		    position: absolute;
+		    left: 40px;
+		    top: calc(65% - 60px);
+		    background-color: transparent;
+		    display: flex;
+		}
+		.left-side {
+		    width: 85px;
+		    height: 60px;
+		    /* background-color: black; */
+		    border-bottom: 60px solid #f3f3f3;
+		    border-left: 65px solid transparent;
+		    border-right: 20px solid transparent;
+		    box-sizing: border-box;
+		}
+		.right-side {
+			height: 60px;
+		    /* background-color: red; */
+		    border-bottom: #d8d0d0 solid 60px;
+		    border-left: transparent solid 10px;
+		    border-right: 25px solid transparent;
+		    box-sizing: border-box;
+		    transform: skewx(26.7deg);
+		    transform-origin: left bottom;
+		}
+		.shadow {
+			width: 120px;
+		    height: 40px;
+		    position: absolute;
+		    bottom: -40px;
+		    border-top: rgba(0,0,0,0.35) solid 40px;
+		    border-left: transparent solid 90px;
+		    border-right: transparent solid 30px;
+		    box-sizing: border-box;
+		    transform: skewX(80deg);
+		    transform-origin: center top;
+		    animation-name: shadow;
+		    animation-duration: 5s;
+		    animation-iteration-count: infinite;
+		    animation-timing-function: ease-in-out;
+		}
+
+		@keyframes rise-and-set {
+			0% {
+				background: #f18630f2;
+				transform-origin: -5px 100px;
+    			transform: rotate(-100deg);
+			}
+			25% {
+				background-color: #FFEF00;
+				/*transform-origin: -5px 100px;
+    			transform: rotate(-40deg);*/
+			}
+			55% {
+				transform-origin: -5px 100px;
+    			transform: rotate(-30deg);
+			}
+			75% {
+				background-color: #FFEF00;
+    			/*transform-origin: 20px 100px;
+    			transform: rotate(60deg);*/
+			}
+			100% {
+				background: #f18630f2;
+				transform-origin: 35px 110px;
+    			transform: rotate(80deg);
+			}
+		}
+
+		@keyframes brightness {
+			0% {
+				opacity: 0;
+			}
+			30% {
+				opacity: 1;
+			}
+			80% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+
+		@keyframes shadow {
+			0% {
+				transform: skewX(80deg);
+			}
+			25% {
+				transform: skewX(70deg);
+			}
+			60% {
+				transform: skewX(10deg);
+				border-top: rgba(0,0,0,0.35) solid 20px;
+			}
+			80% {
+				transform: skewX(-50deg);
+				border-top: rgba(0,0,0,0.35) solid 25px;
+			}
+			100% {
+				border-top: rgba(0,0,0,0.35) solid 40px;
+				transform: skewX(-85deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="frame">
+		<div class="world">
+			<div class="sun"></div>
+			<div class="pyramide">
+				<div class="left-side side"></div>
+				<div class="right-side side"></div>
+				<div class="shadow"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
