@@ -1,12 +1,12 @@
-# 100 days of css day 2
+# 100 days of css day 3
 
-![Header/intro section ](../design/Menu_Icon.png)
+![Header/intro section ](../design/Pyramide.png)
 
 ## Welcome! 👋 
 
 Thanks for checking out this front-end coding challenge. 
 
-**This challenge was implemented with HTML, CSS and Javascript.**
+**This challenge was implemented with HTML and CSS.**
 
 ## My CodePen
 https://codepen.io/phainix/pen/zMXywQ
