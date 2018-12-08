@@ -1,6 +1,6 @@
 # 100 days of css day 3
 
-![Header/intro section ](../design/Pyramide.png)
+![Header/intro section ](../design/Menu_Icon.png)
 
 ## Welcome! 👋 
 
