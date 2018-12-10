@@ -1,6 +1,6 @@
-# 100 days of css day 5
+# 100 days of css day 6
 
-![Header/intro section ](../design/Statistic.png)
+![Header/intro section ](../design/Profile.png)
 
 ## Welcome! 👋 
 
@@ -9,4 +9,4 @@ Thanks for checking out this front-end coding challenge.
 **This challenge was implemented with HTML and CSS.**
 
 ## My CodePen
-https://codepen.io/phainix/pen/QzWLOa
+https://codepen.io/phainix/pen

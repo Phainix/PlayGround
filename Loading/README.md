@@ -1,4 +1,4 @@
-# 100 days of css day 3
+# 100 days of css day 4
 
 ![Header/intro section ](../design/Loading.png)
 
