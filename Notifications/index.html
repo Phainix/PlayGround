@@ -16,11 +16,14 @@
 		    display: flex;
 		    align-items: center;
 		    justify-content: center;
-		    font-size: 15px;
+		    font-size: 14px;
 		    font-family: 'Open Sans', sans-serif;
 		    letter-spacing: .5px;
-		    line-height: 1;
+		    line-height: 1.3;
 		    color: white;
+		}
+		p {
+			margin: 0;
 		}
 		.frame {
 			width: 400px;
@@ -32,15 +35,13 @@
   			display: flex;
 		    align-items: center;
 		    justify-content: center;
+			overflow: hidden;
 		}
 		.notification-container {
 			width: 300px;
 			height: 300px;
 			border-radius: 3px;
-			box-shadow: 9px 9px 20px #0000005c;
-			overflow: hidden;
 			display: flex;
-			background-color: white;
 			position: relative;
 		}
 		.notification {
@@ -48,6 +49,9 @@
 			height: 300px;
 			display: flex;
 			flex-direction: column;
+			z-index: 2;
+			background-color: white;
+			box-shadow: 4px 4px 10px #0000005c;
 		}
 		.header {
 			height: 60px;
@@ -89,6 +93,15 @@
 			background-color: #ffffff9c;
 			border-radius: 4px;
 		}
+		.menu-icon * {
+			transition: all .3s;
+		}
+		.menu-icon:hover {
+			cursor: pointer;
+		}
+		.menu-icon:hover * {
+			background-color: #fff;
+		}
 		.search {
 			display: flex;
 		}
@@ -105,9 +118,9 @@
 		    border-radius: 20px;
 		    font-family: 'Open Sans';
 		    font-size: 13px;
-		    transform: translateX(30px);
+		    transform: translateX(25px);
     		opacity: 0;
-    		transition: all .4s ease-in;
+    		transition: all .6s ease;
 		}
 		.fa {
 			font-size: 1.3rem;
@@ -118,13 +131,14 @@
 		.fa-search:hover {
 			cursor: pointer;
 		}
-		.fa-search:focus ~ input, .fa-search:hover ~ input {
+		input.show {
 			opacity: 1;
 			transform: translateX(0px);
 		}
 		.body {
-			color: #777;
+			color: #888;
 			flex: 1;
+			position: relative;
 		}
 		.list {
 			width: 100%;
@@ -133,11 +147,127 @@
 		    flex-direction: column;
 		    justify-content: space-evenly;
 		    padding-left: 25px;
+		    box-sizing: border-box;
+		    position: relative;
+			overflow: hidden;
+		}
+		.list:after {
+			content: " ";
+		    position: absolute;
+		    width: 3px;
+		    background-color: #cccccc56;
+		    height: 100%;
+		    top: 0;
+		    bottom: 0;
+		    left: 22px;
 		}
 		.list-item {
 			height: 80px;
 			width: 275px;
+			padding: 25px 12px 0px;
+			box-sizing: border-box;
+			position: relative;
+			opacity: 0;
+			transform: translateY(80px);
+		    z-index: 1;
+			animation-name: slide-up;
+			animation-duration: .8s;
+			animation-iteration-count: 1;
+			animation-timing-function: ease-in-out;
+			animation-fill-mode: forwards;
 		}
+		.list-item:hover {
+			color: #5F98CD;
+			cursor: pointer;
+		}
+		.list-item:nth-of-type(2) {
+			animation-delay: .2s
+		}
+		.list-item:nth-of-type(3) {
+			animation-delay: .4s
+		}
+		.list-item-dot {
+			position: absolute;
+		    width: 20px;
+		    height: 20px;
+		    box-sizing: border-box;
+		    background-color: white;
+		    left: -11.5px;
+		    top: 21px;
+		}
+		.list-item-dot:after {
+			content: " ";
+		    position: absolute;
+		    width: 12px;
+		    height: 12px;
+		    border: 2px solid #5F98CD;
+		    border-radius: 50%;
+		    box-sizing: border-box;
+		    background-color: white;
+		    left: 4px;
+		    top: 4px;
+		}
+		.time {
+			font-size: 11px;
+			margin-bottom: 6px;
+		}
+
+		.side-bar {
+		    position: absolute;
+		    left: 0;
+		    top: 20px;
+		    bottom: 20px;
+		    width: 160px;
+		    z-index: 1; 
+		    background: #43627D;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: flex-start;
+		    justify-content: space-evenly;
+		    box-shadow: 4px 4px 10px #0000005c;
+		    transform: translateX(40px);
+		}
+		.side-bar-item {
+		    padding: 12px;
+		    width: 100%;
+		    box-sizing: border-box;
+		    color: #93B2CD;
+		    display: flex;
+		}
+		.side-bar-item:hover {
+			background: rgba(0,0,0,0.2);
+			cursor: pointer;
+			color: white;
+		}
+
+		.icon {
+			width: 2rem;
+		}
+
+		.side-bar, .notification {
+			transition: all .6s ease-in-out;
+			border-radius: 4px;
+    		overflow: hidden;
+		}
+
+		.animate .notification {
+			transform: translateX(140px);
+		}
+		.animate .side-bar {
+			transform: translateX(0px);
+		}
+
+		@keyframes slide-up {
+			0% {
+				opacity: 0;
+				transform: translateY(80px);
+			}
+			100% {
+				opacity: 1;
+				transform: none;
+			}
+		}
+
 	</style>
 
 
@@ -145,10 +275,33 @@
 </head>
 <body>
 	<div class="frame">
-		<div class="notification-container">
+		<div class="notification-container" id="notification-container">
+			<div class="side-bar">
+				<div class="side-bar-item">
+					<div class="icon"><i class="fa fa-dashboard"></i></div>
+					Dashboard
+				</div>
+				<div class="side-bar-item">
+					<div class="icon"><i class="fa fa-user"></i></div>
+					Profile
+				</div>
+				<div class="side-bar-item">
+					<div class="icon"><i class="fa fa-bell"></i></div>
+					Notifications
+				</div>
+				<div class="side-bar-item">
+					<div class="icon"><i class="fa fa-comments"></i></div>
+					Messages
+				</div>
+				<div class="side-bar-item">
+					<div class="icon"><i class="fa fa-gears"></i></div>
+					Settings
+				</div>
+			</div>
+					
 			<div class="notification">
 				<div class="header">
-					<div class="menu-icon">
+					<div class="menu-icon" id="menu-icon">
 						<div class="line"></div>
 						<div class="dot"></div>
 						<div class="line"></div>
@@ -156,8 +309,8 @@
 					<span class="header-title">Notifications</span>
 					<div class="search">
 
-						<span class="fa fa-search"></span>
-						<input type="search" name="" value="" placeholder="Search...">
+						<span class="fa fa-search" id="search-btn"></span>
+						<input id="search" type="search" name="" value="" placeholder="Search...">
 					</div>
 				</div>
 				<div class="body">
@@ -167,23 +320,35 @@
 							<p>
 								<b>John Walker</b> posted a photo on your wall.
 							</p>
+							<div class="list-item-dot"></div>
 						</div>
 						<div class="list-item">
 							<div class="time">8:19 AM</div>
 							<p>
 								<b>Alice Parker</b> commented your last post.
 							</p>
+							<div class="list-item-dot"></div>
 						</div>
 						<div class="list-item">
 							<div class="time">Yesterday</div>
 							<p>
 								<b>Luke Wayne</b> added you as friend.
 							</p>
+							<div class="list-item-dot"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script>
+		document.getElementById("search-btn").addEventListener("click", function() {
+			document.getElementById("search").classList.toggle("show");
+		});
+		document.getElementById("menu-icon").addEventListener("click", function() {
+			document.getElementById("notification-container").classList.toggle("animate");
+		});
+	</script>
 </body>
 </html>
