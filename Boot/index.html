@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>These boots are made for walking</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+	<style>
+		html, body {
+			padding: 0;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			font-family: 'Open Sans', sans-serif;
+			letter-spacing: .5px;
+			line-height: 1;
+			color: white;
+		}
+		.frame {
+			width: 400px;
+			height: 400px;
+			border-radius: 2px;
+			box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.1);
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: radial-gradient(ellipse at center, #f6e8d7 0%, #dabe9b 100%);
+		}
+		.boot-container {
+			width: 400px;
+			height: 400px;
+			display: flex;
+			flex-direction: column;
+		}
+		.boots {
+			flex: 0 0 250px;
+			position: relative;
+		}
+		.ground {
+			flex: 0 0 150px;
+			background-color: #232323;
+		}
+		.boot-item {
+			position: absolute;
+			height: 250px;
+			width: 150px;
+			top: 0px;
+			left: 125px;
+		    transform-origin: top center;
+		    animation-duration: 1s;
+		    animation-iteration-count: infinite;
+		    animation-timing-function: ease-in-out;
+			animation-direction: alternate;
+			animation-fill-mode: forwards;
+		}
+		.boot1 {
+		    transform: rotate(35deg);
+		    animation-name: walk-left;
+		}
+		@keyframes walk-left {
+			0% {
+				transform: rotate(35deg);
+			}
+			100% {
+				transform: rotate(-25deg);
+			}
+		}
+		.boot2 {
+		    transform: rotate(-25deg);
+		    animation-name: walk-right;
+		}
+		@keyframes walk-right {
+			0% {
+				transform: rotate(-25deg);
+			}
+			100% {
+				transform: rotate(35deg);
+			}
+		}
+		.boot {
+			width: 100%;
+			height: 128px;
+    		margin-top: 122px;
+			object-fit: contain;
+    		object-position: bottom center;
+    		animation-duration: 2s;
+		    animation-iteration-count: infinite;
+		    animation-timing-function: ease-in-out;
+			animation-fill-mode: forwards;
+		}
+		.boot1 .boot {
+			transform-origin: bottom center;
+			transform: rotate(15deg);
+			animation-name: boot-left;
+		}
+		.boot2 .boot {
+			transform-origin: bottom center;
+			transform: rotate(-1deg);
+			animation-name: boot-right;
+		}
+		@keyframes boot-left {
+			0% {
+				transform: rotate(15deg) translateY(0px);
+			}
+			25% {
+				transform: rotate(7deg)  translateY(-30px);
+			}
+			50% {
+				transform: rotate(-1deg) translateY(0px);
+			}
+			75% {
+				transform: rotate(7deg)  translateY(0px);
+			}
+			100% {
+				transform: rotate(15deg) translateY(0px);
+			}
+		}
+		@keyframes boot-right {
+			0% {
+				transform: rotate(-1deg) translateY(0px);
+			}
+			25% {
+				transform: rotate(7deg)  translateY(0px);
+			}
+			50% {
+				transform: rotate(15deg) translateY(0px);
+			}
+			75% {
+				transform: rotate(7deg)  translateY(-30px);
+			}
+			100% {
+				transform: rotate(-1deg) translateY(0px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="frame">
+		<div class="boot-container">
+			<div class="boots">
+				<div class="boot-item boot1">
+					<img class="boot" src="boots.svg">
+				</div>
+				<div class="boot-item boot2">
+					<img class="boot" src="boots.svg">
+				</div>
+			</div>
+			<div class="ground"></div>
+		</div>
+	</div>
+</body>
+</html>
