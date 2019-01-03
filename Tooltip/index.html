@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tooltip</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+	<style>
+		html, body {
+			padding: 0;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 23px;
+			font-family: 'Open Sans', sans-serif;
+			letter-spacing: .5px;
+			line-height: 1.5;
+			color: white;
+		}
+		.frame {
+			width: 400px;
+			height: 400px;
+			border-radius: 2px;
+			box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.1);
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background-color: #4CB6DE;
+			padding: 30px;
+			box-sizing: border-box;
+		}
+		p {
+			margin: 0;
+			width: 100%;
+		}
+		.author {
+			font-size: 20px;
+			font-style: italic;
+			margin-top: 20px;
+		}
+		.quote {
+			position: relative;
+			padding-top: 30px;
+			box-sizing: border-box;
+		}
+		.quote:before {
+			content: ",,";
+		    font-weight: bolder;
+		    position: absolute;
+		    font-size: 200px;
+		    line-height: 0;
+		    top: -30px;
+		    left: -30px;
+		    color: #ffffff24;
+		    z-index: 0;
+		    font-family: sans-serif;
+		}
+		.hasTooltip {
+		    position: relative;
+		    background: #286F8A;
+		    cursor: pointer;
+		    padding: 3px 0px 7px 5px;
+		    margin-right: 6px;
+		}
+		.tooltip {
+		    position: absolute;
+		    top: -147px;
+		    width: 300px;
+		    background: #286F8A;
+		    left: -95px;
+		    display: flex;
+		    flex-direction: column;
+		    font-size: 16px;
+		    box-shadow: 2px 2px 8px #286f8a52;
+		    cursor: text;
+		    opacity: 0;
+		    visibility: hidden; 
+		    transform: translateY(-30px);
+		    transition: opacity .4s, visibility .4s, transform .8s;
+		}
+		.hasTooltip:hover .tooltip {
+			opacity: 1;
+			visibility: visible; 
+		    transform: translateY(0px);
+		}
+		.tooltip .head {
+			background: white;
+			color: #286F8A;
+			padding: 5px 15px;
+		}
+		.tooltip .head .fa {
+			cursor: pointer;
+		}
+		.tooltip .body {
+			padding: 15px;
+		}
+		.tooltip:after {
+		    content: " ";
+		    width: 12px;
+		    height: 12px;
+		    background: #286F8A;
+		    position: absolute;
+		    left: 144px;
+		    bottom: -16px;
+		    transform: rotate(45deg);
+		    margin: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="frame">
+		<p class="quote">
+			I know quite certainly that I myself have no special talent; curiosity, 
+			<span class="hasTooltip">
+				obsession
+				<span class="tooltip">
+					<span class="head">[əbˈseʃ(ə)n] <i class="fa fa-volume-up"></i></span>
+					<span class="body">
+						<b>Obsession</b>, a persistent disturbing preoccupation with an often unreasonable idea or feeling.
+					</span>
+				</span> 
+			</span>
+			and dogged endurance, combined with self-criticism have brought me to my ideas.
+		</p>
+		<p class="author">Albert Einstein</p>
+	</div>
+</body>
+</html>
