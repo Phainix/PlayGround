@@ -74,14 +74,17 @@
 		    border-radius: 50%;
 		    border: 1px solid #497081;
 		    transition: all .6s;
+		    position: relative;
+		    overflow: visible;
+		    transition-delay: .5s;
 		}
 		.checklist.clicked {
 			color: #49708150;
 		}
 		.checklist.clicked .checklist-icon {
-			border: 1px solid #49708150;
+			transition-delay: 0s;
+			border: 1px solid #49708100;
 			transform: scale(1.4);
-			opacity: 0;
 		}
 		.checklist-text {
 			transition: all .6s;
@@ -93,7 +96,24 @@
 			margin: 0;
 		}
 		.poly {
-			stroke:#49708170;stroke-width:2;fill: transparent;stroke-linecap: round;
+			stroke:#49708170;
+			stroke-width:1.2px;
+			fill: transparent;
+			stroke-linecap: round;
+		}
+		.svg {
+			position: absolute; 
+			width: 16px; 
+			height: 14px;
+			top: -3px;
+			stroke-dasharray: 20;
+    		stroke-dashoffset: 20;
+    		transition: all .6s;
+			transition-delay: 0s;
+		}
+		.checklist.clicked .svg {
+			stroke-dashoffset: 0;
+			transition-delay: .4s;
 		}
 	</style>
 
@@ -113,8 +133,8 @@
 						Create a list
 					</div>
 					<div class="checklist-icon">
-						<svg viewBox="0 0 60 20" style="position: absolute; width: 60px; height: 20px;">
-							<polyline class="poly" points=".2,9 6,13 14,4"/>
+						<svg viewBox="0 0 18 14" class="svg">
+							<polyline class="poly" points="1,9 6,13 14,4"/>
 						</svg>
 					</div>
 				</div>
@@ -123,8 +143,8 @@
 						Complete first task
 					</div>
 					<div class="checklist-icon">
-						<svg viewBox="0 0 60 20" style="position: absolute; width: 60px; height: 20px;">
-							<polyline class="poly" points=".2,9 6,13 14,4"/>
+						<svg viewBox="0 0 18 14" class="svg">
+							<polyline class="poly" points="1,9 6,13 14,4"/>
 						</svg>
 					</div>
 				</div>
@@ -133,8 +153,8 @@
 						Write some CSS code
 					</div>
 					<div class="checklist-icon">
-						<svg viewBox="0 0 60 20" style="position: absolute; width: 60px; height: 20px;">
-							<polyline class="poly" points=".2,9 6,13 14,4"/>
+						<svg viewBox="0 0 18 14" class="svg">
+							<polyline class="poly" points="1,9 6,13 14,4"/>
 						</svg>
 					</div>
 				</div>
@@ -143,8 +163,8 @@
 						Amaze the world
 					</div>
 					<div class="checklist-icon">
-						<svg viewBox="0 0 60 20" style="position: absolute; width: 60px; height: 20px;">
-							<polyline class="poly" points=".2,9 6,13 14,4"/>
+						<svg viewBox="0 0 16 14" class="svg">
+							<polyline class="poly" points="1,9 6,13 14,4"/>
 						</svg>
 					</div>
 				</div>
