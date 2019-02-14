@@ -73,17 +73,26 @@
 		    display: flex;
     		flex-direction: column;
     		padding: 6px;
+    		visibility: hidden;
+    		opacity: 0;
+    		transition: .2s;
 		}
 		.search-item {
 			padding: 8px 10px;
 			cursor: pointer;
 			margin: 5px 0px;
+			overflow: hidden;
+    		white-space: normal;
 		}
 		.search-item:hover {
 			color: #5599dc;
 		}
 		.search-param {
 			font-weight: 600;
+		}
+		.show .search-result {
+			visibility: visible;
+    		opacity: 1;
 		}
 		* {
 			box-sizing: border-box;
@@ -95,15 +104,34 @@
 </head>
 <body>
 	<div class="frame">
-		<div class="search-container">
-			<input type="text" name="" value="" placeholder="Start typing ..." class="input">
+		<div class="search-container" id="search-container">
+			<input type="text" name="" value="" placeholder="Start typing ..." class="input" id="input">
 			<i class="fa fa-search search-icon"></i>
 			<div class="search-result">
-				<div class="search-item"><span class="search-param">wfrf</span></div>
-				<div class="search-item">Veritatis et <span class="search-param">wfrf</span></div>
-				<div class="search-item">ut aliquid ex <span class="search-param">wfrf</span> vero eos</div>
+				<div class="search-item"><span class="search-param"></span></div>
+				<div class="search-item">Veritatis et <span class="search-param"></span></div>
+				<div class="search-item">ut aliquid ex <span class="search-param"></span> vero eos</div>
 			</div>	
 		</div>
 	</div>
+
+	<script>
+		var changeInput = function(event) {
+        	var text = event.srcElement.value;
+
+        	var searchs = document.getElementsByClassName('search-param');
+        	for (var i = searchs.length - 1; i >= 0; i--) {
+        		var search = searchs[i];
+        		search.innerText = text;
+        	}
+
+        	if(text == '') {
+        		document.getElementById('search-container').classList.remove('show');
+        	} else {
+        		document.getElementById('search-container').classList.add('show');
+        	}
+		};
+		document.getElementById('input').addEventListener('input', changeInput);
+	</script>
 </body>
 </html>
