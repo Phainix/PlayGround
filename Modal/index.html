@@ -50,7 +50,7 @@
 			display: flex;
 			flex-direction: column;
 			opacity: 0;
-			transform: scale(.7);
+			transform: scale(.85);
 			transition: 1s;
 		}
 		.modal-body {
@@ -66,6 +66,12 @@
 			z-index: 2;
 			opacity: 1;
 			transform: scale(1);
+			transition: .6s;
+		}
+		.modal.show.out {
+			z-index: 2;
+			opacity: 0;
+			transform: scale(1.2);
 		}
 		.modal-body .head {
 			font-weight: bold;
@@ -120,7 +126,7 @@
 <body>
 	<div class="frame">
 		<div class="modal-container">
-			<div class="modal">
+			<div class="modal show" id="modal-1">
 				<div class="modal-number">
 					<span>1</span>
 				</div>
@@ -128,15 +134,58 @@
 					<div class="head">The couch</div>
 					<p>If you want to grow, get outside your comfort zone.</p>
 				</div>
-				<div class="modal-footer">OK</div>
+				<div class="modal-footer" data-modal-id="1">OK</div>
 			</div>
-			<div class="modal">
-				
+			<div class="modal" id="modal-2">
+				<div class="modal-number">
+					<span>2</span>
+				</div>
+				<div class="modal-body">
+					<div class="head">Failing is learning</div>
+					<p>Pick yourself up, dust yourself off, and start again.</p>
+				</div>
+				<div class="modal-footer" data-modal-id="2">OK</div>
 			</div>
-			<div class="modal">
-				
+			<div class="modal" id="modal-3">
+				<div class="modal-number">
+					<span>3</span>
+				</div>
+				<div class="modal-body">
+					<div class="head">Flowers and rainbows</div>
+					<p>Always be yourself, unless you can be a unicorn.</p>
+				</div>
+				<div class="modal-footer" data-modal-id="3">OK</div>
 			</div>
 		</div>
 	</div>
+
+	<script>
+	
+		function next(active) {
+			active = parseInt(active);
+			if((active + 1) < 4) {
+				return active + 1;
+			} else {
+				return 1;
+			}
+		}
+
+		var toggleModal = function() {
+			var active = this.getAttribute('data-modal-id');
+			document.getElementById('modal-'+active).classList.add('out');
+			setTimeout(function() {
+				document.getElementById('modal-'+active).classList.remove('show', 'out');
+				document.getElementById('modal-'+next(active)).classList.add('show');
+			}, 600);
+		};
+
+		var modal_toggles = document.getElementsByClassName('modal-footer');
+
+		for (var i = modal_toggles.length - 1; i >= 0; i--) {
+			var toggle = modal_toggles[i];
+			toggle.addEventListener('click',toggleModal);
+		}
+
+	</script>
 </body>
 </html>
