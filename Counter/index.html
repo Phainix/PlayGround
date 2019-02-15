@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Counter</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
 	<style>
 		html, body {
 			padding: 0;
@@ -38,10 +38,58 @@
 			background-color: white;
 			border-radius: 20px;
 			box-shadow: 0px 4px 20px rgba(0,0,0,0.22);
+			display: flex;
+		    align-items: center;
+		    justify-content: space-between;
 		}
 		.sub, .num, .add {
 			width: 30px;
 			height: 30px;
+			position: relative;
+			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		.sub, .add {
+			border-radius: 50%;
+			margin: 5px;
+			cursor: pointer;
+			transition: .4s;
+		}
+		.sub:hover {
+			background-color: #ef5a5a;
+		}
+		.sub::after {
+			content: " ";
+			position: absolute;
+			width: 20px;
+			height: 2px;
+			background-color: #ef5a5a;
+			transition: .4s;
+		}
+		.sub:hover::after {
+			background-color: white;
+		}
+		.add::after, .add::before {
+			content: " ";
+			position: absolute;
+			width: 20px;
+			height: 2px;
+			background-color: darkseagreen;
+			transition: .4s;
+		}
+		.add::after {
+			transform: rotate(90deg);
+		}
+		.add:hover {
+			background-color: darkseagreen;
+		}
+		.add:hover::after, .add:hover::before {
+			background-color: white;
+		}
+		.num {
+			color: #6A85A0;
+    		font-size: 22px;
 		}
 		* {
 			box-sizing: border-box;
@@ -54,12 +102,22 @@
 <body>
 	<div class="frame">
 		<div class="counter">
-			<div class="sub">
-				
-			</div>
-			<div class="num"></div>
-			<div class="add"></div>
+			<div class="sub" id="sub"></div>
+			<div class="num" id="num">0</div>
+			<div class="add" id="add"></div>
 		</div>
 	</div>
+
+	<script>
+		document.getElementById('sub').addEventListener('click', function() {
+			var curr = document.getElementById('num').innerText;
+			document.getElementById('num').innerText = parseInt(curr) - 1;
+		})
+
+		document.getElementById('add').addEventListener('click', function() {
+			var curr = document.getElementById('num').innerText;
+			document.getElementById('num').innerText = parseInt(curr) + 1;
+		})
+	</script>
 </body>
 </html>
