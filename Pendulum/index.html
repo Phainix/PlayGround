@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Pendulum</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+	<style>
+		html, body {
+			padding: 0;
+		    margin: 0;
+		    width: 100vw;
+		    height: 100vh;
+		    overflow: hidden;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    font-size: 16px;
+		    font-family: 'Open Sans', sans-serif;
+		    letter-spacing: .5px;
+		    line-height: 1;
+		    color: white;
+		}
+		.frame {
+			width: 400px;
+			height: 400px;
+			border-radius: 2px;
+			box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+			background-color: #3FAF82;
+  			color: #fff;
+  			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		.pendulum {
+
+		}
+		.dot {
+			width: 14px;
+			height: 14px;
+			background-color: white;
+			border-radius: 50%;
+			margin: 4px 0px;
+			animation: dot 60s ease-in-out;
+		}
+		@keyframes dot {
+			0% {
+				transform: translate(0,0);
+			}
+			2% {
+				transform: translate(-60px,0);
+			}
+			4% {
+				transform: translate(60px,0);
+			}
+			6% {
+				transform: translate(-60px,0);
+			}
+			8% {
+				transform: translate(60px,0);
+			}
+			10%,100% {
+				transform: translate(0,0);
+			}
+		}
+		.dot:nth-of-type(1) {
+			animation-timing-function: cubic-bezier(0.00, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(2) {
+			animation-timing-function: cubic-bezier(0.05, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(3) {
+			animation-timing-function: cubic-bezier(0.10, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(4) {
+			animation-timing-function: cubic-bezier(0.15, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(5) {
+			animation-timing-function: cubic-bezier(0.20, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(6) {
+			animation-timing-function: cubic-bezier(0.25, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(7) {
+			animation-timing-function: cubic-bezier(0.30, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(8) {
+			animation-timing-function: cubic-bezier(0.35, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(9) {
+			animation-timing-function: cubic-bezier(0.40, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(10) {
+			animation-timing-function: cubic-bezier(0.45, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(11) {
+			animation-timing-function: cubic-bezier(0.50, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(12) {
+			animation-timing-function: cubic-bezier(0.55, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(13) {
+			animation-timing-function: cubic-bezier(0.60, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(14) {
+			animation-timing-function: cubic-bezier(0.65, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(15) {
+			animation-timing-function: cubic-bezier(0.70, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(16) {
+			animation-timing-function: cubic-bezier(0.75, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(17) {
+			animation-timing-function: cubic-bezier(0.80, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(18) {
+			animation-timing-function: cubic-bezier(0.85, 0.89, 0.32, 1.28);
+		}
+		.dot:nth-of-type(19) {
+			animation-timing-function: cubic-bezier(0.90, 0.89, 0.32, 1.28);
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+		.
+	</style>
+
+
+
+</head>
+<body>
+	<div class="frame">
+		<div class="pendulum">
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div>
+	</div>
+</body>
+</html>
