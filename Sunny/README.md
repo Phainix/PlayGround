@@ -1,6 +1,6 @@
-# 100 days of css day 3
+# 100 days of css day 33
 
-![Header/intro section ](../design/Layout.png)
+![Header/intro section ](../design/Sunny.png)
 
 ## Welcome! 👋 
 
@@ -9,4 +9,4 @@ Thanks for checking out this front-end coding challenge.
 **This challenge was implemented with HTML and CSS.**
 
 ## My CodePen
-https://codepen.io/phainix/pen
+https://codepen.io/phainix/pen/Rvemxz
