@@ -90,7 +90,19 @@
 		.num {
 			color: #6A85A0;
     		font-size: 22px;
+    		position: relative;
 		}
+		.num.subb {
+			transform: scale(.8);
+			opacity: 0;
+    		transition: .25s;
+		}
+		.num.addd {
+			transform: scale(1.2);
+			opacity: 0;
+    		transition: .25s;
+		}
+		
 		* {
 			box-sizing: border-box;
 		}
@@ -103,7 +115,9 @@
 	<div class="frame">
 		<div class="counter">
 			<div class="sub" id="sub"></div>
-			<div class="num" id="num">0</div>
+			<div class="num" id="num">
+				0
+			</div>
 			<div class="add" id="add"></div>
 		</div>
 	</div>
@@ -112,11 +126,21 @@
 		document.getElementById('sub').addEventListener('click', function() {
 			var curr = document.getElementById('num').innerText;
 			document.getElementById('num').innerText = parseInt(curr) - 1;
+			
+			document.getElementById('num').classList.add('subb');
+			setTimeout(function() {
+				document.getElementById('num').classList.remove('subb');
+			},250);
 		})
 
 		document.getElementById('add').addEventListener('click', function() {
 			var curr = document.getElementById('num').innerText;
 			document.getElementById('num').innerText = parseInt(curr) + 1;
+			
+			document.getElementById('num').classList.add('addd');
+			setTimeout(function() {
+				document.getElementById('num').classList.remove('addd');
+			},250);
 		})
 	</script>
 </body>
