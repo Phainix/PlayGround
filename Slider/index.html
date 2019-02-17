@@ -111,14 +111,14 @@
 </head>
 <body>
 	<div class="frame">
-		<div class="slider slide-active-1" id="slider" data-slide-active="1">
+		<div class="slider slide-active-3" id="slider" data-slide-active="3">
 			<div class="slide" id="slide1"></div>
 			<div class="slide" id="slide2"></div>
 			<div class="slide" id="slide3"></div>
 			<div class="slide-buttons">
-				<div class="slide-button active" data-slide-button="1" id="slide1-button"></div>
+				<div class="slide-button" data-slide-button="1" id="slide1-button"></div>
 				<div class="slide-button" data-slide-button="2" id="slide2-button"></div>
-				<div class="slide-button" data-slide-button="3" id="slide3-button"></div>
+				<div class="slide-button active" data-slide-button="3" id="slide3-button"></div>
 				<div class="button"></div>
 			</div>
 		</div>
@@ -144,6 +144,11 @@
 			var slide_button = slide_buttons[i]
 			slide_button.addEventListener('click', slider, false);
 		};
+
+		setTimeout(function() {
+			document.getElementById("slide1-button").click();	
+		}, 100);
+		
 	</script>
 </body>
 </html>
