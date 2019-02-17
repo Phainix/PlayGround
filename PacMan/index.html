@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PacMan</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+	<style>
+		html, body {
+			padding: 0;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 23px;
+			font-family: 'Open Sans', sans-serif;
+			letter-spacing: .5px;
+			line-height: 1.5;
+			color: white;
+		}
+		.frame {
+			width: 400px;
+			height: 400px;
+			border-radius: 2px;
+			box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.1);
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background-color: #2C2E2E;
+			padding: 30px;
+			box-sizing: border-box;
+			position: relative;
+		}
+		.pacman {
+			width: 100px;
+			height: 100px;
+			position: relative;
+		}
+		.pacman-top, .pacman-bottom {
+			background-color: #F4D146;
+			width: 100px;
+			height: 50px;
+			animation-direction: alternate !important;
+			animation-timing-function: ease-in-out !important;
+		}
+		.pacman-top {
+		    border-radius: 50px 50px 0px 0px;
+			transform-origin: bottom center;
+		    animation: pacman-top .4s infinite;
+		}
+		@keyframes pacman-top {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(-40deg);
+			}
+		}
+		.pacman-bottom {
+		    border-radius: 0px 0px 50px 50px;
+			transform-origin: top center;
+		    animation: pacman-bottom .4s infinite;
+		}
+		@keyframes pacman-bottom {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(40deg);
+			}
+		}
+		.eye {
+			top: 16px;
+		    left: 55px;
+		    background-color: #2C2E2E;
+		    width: 13px;
+		    height: 13px;
+		    position: absolute;
+		    border-radius: 50%;
+		    animation: eye .4s infinite;
+		    animation-direction: alternate;
+		    transform-origin: -5px 34px;
+		}
+		@keyframes eye {
+			from {
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(-20deg);
+			}
+		}
+		.foods {
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			right: 0;
+			overflow: hidden;
+			width: 200px;
+		    height: 13px;
+		    z-index: 1;
+		}
+		.food {
+			width: 13px;
+		    height: 13px;
+		    margin: 0px 13px;
+		    border-radius: 50%;
+		    background-color: #F4D146;
+		    position: absolute;
+		    animation: food 3s linear infinite;
+		    right: -40px;
+		}
+		@keyframes food {
+			from {
+
+			}
+			to {
+				transform: translateX(-240px);
+			}
+		}
+		.food:nth-of-type(2) {
+			animation-delay: .6s;
+		}
+
+		.food:nth-of-type(3) {
+			animation-delay: 1.2s;
+		}
+
+		.food:nth-of-type(4) {
+			animation-delay: 1.8s;
+		}
+
+		.food:nth-of-type(5) {
+			animation-delay: 2.4s;
+		}
+	</style>
+</head>
+<body>
+	<div class="frame">
+		<div class="pacman-container">
+			<div class="pacman">
+				<div class="pacman-top"></div>
+				<div class="pacman-bottom"></div>
+				<div class="eye"></div>
+			</div>
+		</div>
+		<div class="foods">
+			<div class="food"></div>
+			<div class="food"></div>
+			<div class="food"></div>
+			<div class="food"></div>
+			<div class="food"></div>
+			<!-- <div class="food"></div> -->
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Fitness</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+	<style>
+		html, body {
+			padding: 0;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+			font-family: 'Open Sans', sans-serif;
+			letter-spacing: .5px;
+			line-height: 1.5;
+			color: white;
+		}
+		.frame {
+			width: 400px;
+			height: 400px;
+			border-radius: 2px;
+			box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.1);
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background-color: #213540;
+			padding: 30px;
+			box-sizing: border-box;
+			position: relative;
+		}
+		p, h6, h3 {
+			margin: 0;
+		}
+		.title {
+			text-align: center;
+		}
+		.title h6, .fitness h6 {
+			font-size: 16px;
+			font-weight: normal;
+		}
+		.fitness-big h6 {
+			font-size: 22px;
+			font-weight: normal;
+		}
+		.fitness p {
+			font-size: 14px;
+		    color: #648192;
+		}
+		.title h3{
+			font-size: 22px;
+			font-weight: bold;
+		}
+		.fitness-container  {
+			height: 250px;
+			width: 400px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.fitness-big {
+			flex: 0 0 400px;
+			height: 150px;
+		}
+		.fitness-small {
+			flex: 0 0 120px;
+			height: 100px;
+		}
+		.fitness {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			position: relative;
+		}
+		.circle {
+			position: absolute;
+			width: 150px;
+			height: 150px;
+		}
+		.fitness-small .circle {
+			width: 90px;
+			height: 90px;
+		}
+		.fitness-big .progress {
+		    stroke-linecap: round;
+		    stroke-dasharray: 345;
+    		stroke-dashoffset: 345;
+		    stroke: #27E1AE;
+		    transform-origin: center;
+		    transform: rotate(-90deg);
+		    animation: fitness-big 1s linear 1 forwards;
+		}
+		@keyframes fitness-big {
+			to {
+				stroke-dashoffset: 110;
+			}
+		}
+		.fitness-small:nth-of-type(2) .progress {
+		    stroke-linecap: round;
+		    stroke-dashoffset: 251;
+		    stroke: #5CE1EC;
+		    stroke-dasharray: 251;
+		    transform: rotate(-90deg);
+		    transform-origin: center;
+		    animation: fitness-small1 1s linear 1 forwards;
+		}
+		@keyframes fitness-small1 {
+			to {
+				stroke-dashoffset: 100;
+			}
+		}
+		.fitness-small:nth-of-type(3) .progress {
+		    stroke-linecap: round;
+		    stroke-dashoffset: 251;
+		    stroke: #5CE1EC;
+		    stroke-dasharray: 251;
+		    transform: rotate(-90deg);
+		    transform-origin: center;
+		    animation: fitness-small2 1s linear 1 forwards;
+		}
+		@keyframes fitness-small2 {
+			to {
+				stroke-dashoffset: 165;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="frame">
+		<div class="title">
+			<h6>YOUR DAILY</h6>
+			<h3><b>PROGRESS</b></h3>
+		</div>
+		<div class="fitness-container">
+			<div class="fitness-big fitness">
+				<h6>2758</h6>
+				<p>kcal</p>
+				<svg class="circle" viewbox="0 0 150 150">
+					<circle cx="75" cy="75" r="55" fill="none" stroke="#1B2A33" stroke-width="10"/>
+					<circle class="progress" cx="75" cy="75" r="55" fill="none" stroke-width="10"/>
+				</svg>	
+			</div>
+			<div class="fitness-small fitness"> 
+				<h6>8563</h6>
+				<p>steps</p>
+				<svg class="circle" viewbox="0 0 100 100">
+					<circle cx="50" cy="50" r="40" fill="none" stroke="#1B2A33" stroke-width="8"/>
+					<circle class="progress" cx="50" cy="50" r="40" fill="none" stroke-width="8"/>
+				</svg>	
+			</div>
+			<div class="fitness-small fitness">
+				<h6>6,2</h6>
+				<p>km</p>
+				<svg class="circle" viewbox="0 0 100 100">
+					<circle cx="50" cy="50" r="40" fill="none" stroke="#1B2A33" stroke-width="8"/>
+					<circle class="progress" cx="50" cy="50" r="40" fill="none" stroke-width="8"/>
+				</svg>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>
