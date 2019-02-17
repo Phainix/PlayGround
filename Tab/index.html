@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tab CSS</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		html, body {
+			padding: 0;
+		    margin: 0;
+		    width: 100vw;
+		    height: 100vh;
+		    overflow: hidden;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    font-size: 16px;
+		    font-family: 'Open Sans', sans-serif;
+		    letter-spacing: .5px;
+		    line-height: 1;
+		    color: white;
+		}
+		.frame {
+			width: 400px;
+			height: 400px;
+			border-radius: 2px;
+			box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+			background-color: #2B3642;
+  			color: #2B3642;
+  			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		}
+		* {
+			box-sizing: border-box;
+		}
+		.tab-container {
+			width: 320px;
+			height: 240px;
+			background: white;
+			box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.3);
+			display: flex;
+    		flex-direction: column;
+		}
+		.tab-header {
+			width: 100%;
+			height: 40px; 
+			background-color: #3D4D5E;
+			display: flex;
+		}
+		.tab-title {
+		    flex: 0 0 40px;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    cursor: pointer;
+		    color: #8398AD;
+		}
+		.tab-title.active {
+			background-color: #5DA2ED;
+			color: #fff;
+		}
+		.tab-title:hover {
+			color: #fff;
+		}
+		.tab-body {
+			flex: 0 0 200px;
+		    width: 100%;
+		    height: 200px;
+		    position: relative;
+		    display: flex;
+		}
+		.tab-content {
+		    width: 320px;
+		    height: 200px;
+		    position: absolute;
+		    visibility: hidden;
+		    opacity: 0;
+		    padding: 30px;
+		}
+		.tab-content.active {
+			visibility: visible;
+			opacity: 1;
+		}
+		h5 {
+			margin: 0;
+		}
+	</style>
+
+
+
+</head>
+<body>
+	<div class="frame">
+		<div class="tab-container">
+			<div class="tab-header">
+				<div class="tab-title tilte1 active">
+					<span><i class="fa fa-eye"></i></span>
+				</div>
+				<div class="tab-title tilte2">
+					<span><i class="fa fa-comments"></i></span>
+				</div>
+				<div class="tab-title tilte3">
+					<span><i class="fa fa-bell"></i></span>
+				</div>
+				<div class="tab-title tilte4">
+					<span><i class="fa fa-cog"></i></span>
+				</div>
+				<div class="tab-title tilte search">
+				<span><i class="fa fa-search"></i></span>
+				</div>
+			</div>
+			<div class="tab-body">
+				<div class="tab-content active">
+					<h5>Dashboard</h5>
+				</div>
+				<div class="tab-content">
+					<h5>Comments</h5>
+				</div>
+				<div class="tab-content">
+					<h5>Notifications</h5>
+				</div>
+				<div class="tab-content">
+					<h5>Settings</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
