@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Typography</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700">
+	<style>
+		html, body {
+			padding: 0;
+			margin: 0;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+			font-family: 'Open Sans', sans-serif;
+			letter-spacing: .5px;
+			line-height: 1.5;
+			color: white;
+		}
+		.frame {
+			width: 400px;
+			height: 400px;
+			border-radius: 2px;
+			box-shadow: 4px 4px 16px 0 rgba(0,0,0,0.1);
+			color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background-color: #E16D6C;
+			padding: 30px;
+			box-sizing: border-box;
+			position: relative;
+		}
+		p, h6, h3 {
+			margin: 0;
+		}
+		.dot {
+			width: 50px;
+			height: 50px;
+			background-color: white;
+			border-radius: 50%;
+			animation: dot 1s ease-in-out 1 forwards;
+		}
+		@keyframes dot {
+			0% {
+				transform: scale(1);
+			}
+			30% {
+				transform: scale(1.2);
+			}
+			100% {
+				transform: scale(0);
+			}
+		}
+		.lines {
+			position: absolute;
+			display: flex;
+		}
+		.lines .line {
+			height: 4px;
+			width: 4px;
+			background-color: white;
+			animation: line .5s ease-in-out 1 forwards;
+			animation-delay: 1s;
+			opacity: 0;
+		}
+		@keyframes line {
+			0% {
+				transform: scale(1,1);
+				opacity: 1;
+			}
+
+			99.99% {
+				opacity: 1;
+			}
+			100% {
+				transform: scale(75,1);
+				opacity: 0;
+			}
+		}
+		.lines2 {
+			display: flex;
+			justify-content: space-between;
+			width: 300px;
+			position: absolute;
+		}
+		.lines2 .line {
+			height: 4px;
+			width: 150px;
+			background-color: white;
+			animation: line2 .5s ease-in-out 1 forwards;
+			animation-delay: 1.5s;
+			opacity: 0;
+			transform: scale(1, 1);
+			transform-origin: left center;
+		}
+		.lines2 .line:nth-of-type(2) {
+			transform-origin: right center;
+		}
+		@keyframes line2 {
+			0% {
+				transform: scale(1,1);
+				opacity: 1;
+			}
+
+			99.99% {
+				opacity: 1;
+			}
+			100% {
+				transform: scale(0.0267,1);
+				opacity: 0;
+			}
+		}
+		.lines3 {
+			display: flex;
+			justify-content: space-between;
+			width: 300px;
+			position: absolute;
+		}
+		.lines3 .line {
+			height: 4px;
+			width: 4px;
+			background-color: white;
+			animation: line3 .5s ease-in-out 1 forwards;
+			animation-delay: 2s;
+			opacity: 0;
+		}
+		@keyframes line3 {
+			0% {
+				transform: scale(1,1);
+				opacity: 1;
+			}
+			100% {
+				transform: scale(1,16);
+				opacity: 1;
+			}
+		}
+		.lines3 .horiz {
+			height: 4px;
+			width: 4px;
+			background-color: white;
+			animation: line-horiz .5s ease-in-out 1 forwards;
+			animation-delay: 2.5s;
+			transform-origin: left center;
+    		position: absolute;
+		}
+		.lines3 .horiz.right-bottom, .lines3 .horiz.right-top {
+			transform-origin: right center;
+		}
+		@keyframes line-horiz {
+			0% {
+				transform: scale(1,1);
+				opacity: 1;
+			}
+			100% {
+				transform: scale(6,1);
+				opacity: 1;
+			}
+		}
+		.line.left-top.horiz {
+		    left: 0px;
+		    top: -30px;
+		}
+		.line.left-bottom.horiz {
+		    left: 0px;
+		    top: 30px;
+		}
+		.line.right-top.horiz {
+		    top: -30px;
+		    right: 0px;
+		}
+		.line.right-bottom.horiz {
+		    top: 30px;
+		    right: 0px;
+		}
+		.center-text {
+		    position: absolute;
+		    font-weight: 900;
+		    font-size: 49px;
+		    line-height: 1;
+		    animation: text .5s ease-in-out 1 forwards;
+			animation-delay: 2s;
+			opacity: 0;
+		}
+		@keyframes text {
+			to {
+				opacity: 1;
+			}
+		}
+		.center-text:after, .center-text:before {
+		    content: " ";
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    height: 50%;
+		    background: #e16d6c;
+		    animation: text-pseudo .5s ease-in-out 1 forwards;
+			animation-delay: 2s;
+		}
+		@keyframes text-pseudo {
+			from {
+				transform: scale(1,1);
+			}
+			to {
+				transform: scale(1,0);
+			}
+		}
+		.center-text:before {
+		    top: 0;
+		    transform-origin: top center;
+		}
+		.center-text:after {
+		    bottom: 0;
+		    transform-origin: bottom center;
+		}
+		.top-text, .bottom-text {
+		    position: absolute;
+		    font-size: 30px;
+		}
+		.top-text {
+		    top: 135px;
+		    opacity: 0;
+		    animation: top-text .5s ease-out 1 forwards;
+			animation-delay: 2.8s;
+		}
+		@keyframes top-text {
+			from {
+				transform: translateX(-30px);
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+		}
+		.bottom-text {
+		    bottom: 130px;
+		    opacity: 0;
+		    animation: bottom-text .5s ease-out 1 forwards;
+			animation-delay: 2.8s;
+		}
+		@keyframes bottom-text {
+			from {
+				transform: translateX(30px);
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="frame">
+		<div class="dot"></div>
+		<div class="lines">
+			<div class="line left"></div>
+			<div class="line right"></div>
+		</div>
+		<div class="lines2">
+			<div class="line left"></div>
+			<div class="line right"></div>
+		</div>
+		<div class="lines3">
+			<div class="line left"></div>
+			<div class="line right"></div>
+			<div class="line left-top horiz"></div>
+			<div class="line left-bottom horiz"></div>
+			<div class="line right-top horiz"></div>
+			<div class="line right-bottom horiz"></div>
+		</div>
+		<div class="center-text">
+			MOMENTS
+		</div>
+		<div class="top-text">COLLECT</div>
+		<div class="bottom-text">NOT THINGS</div>
+	</div>
+</body>
+</html>
