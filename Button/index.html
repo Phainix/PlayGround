@@ -130,6 +130,9 @@
 			visibility: hidden;
 			position: absolute;
 			cursor: pointer;
+			display: flex;
+		    align-items: center;
+		    justify-content: center;
 		}
 		.anim .circle-round {
 			animation: circle-round .5s ease-in-out 1;
@@ -186,7 +189,9 @@
 		<div id="circle-anim">
 
 		</div>
-		<div class="circle-round" id="circle-round"></div>
+		<div class="circle-round" id="circle-round">
+			<img src="check.svg" alt="">
+		</div>
 	</div>
 	<script type="text/javascript">
 		var click_btn = function () {
