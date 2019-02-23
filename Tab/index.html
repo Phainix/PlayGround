@@ -81,10 +81,15 @@
 		    padding: 26px;
 		    display: flex;
     		flex-direction: column;
+    		opacity: 0;
+    		transform: translateY(10px);
+    		transition: all 0s;
 		}
 		.tab-content.active {
 			visibility: visible;
 			opacity: 1;
+			transform: none;
+			transition: all 1.2s;
 		}
 		.content {
 		    flex: 1;
@@ -96,6 +101,15 @@
 		.polyline {
 			stroke: #eee;
 			stroke-width: 4px;
+		}
+		.search {
+			flex: 1;
+		    justify-content: flex-end;
+		    padding: 10px;
+		    display: flex;
+		    align-items: center;
+		    cursor: pointer;
+		    color: #8398AD;
 		}
 		h5 {
 			margin: 0;
@@ -110,19 +124,19 @@
 	<div class="frame">
 		<div class="tab-container">
 			<div class="tab-header">
-				<div class="tab-title tilte1 active" data-tab-id="1">
+				<div class="tab-title active" data-tab-id="1">
 					<span><i class="fa fa-eye"></i></span>
 				</div>
-				<div class="tab-title tilte2" data-tab-id="2">
+				<div class="tab-title" data-tab-id="2">
 					<span><i class="fa fa-comments"></i></span>
 				</div>
-				<div class="tab-title tilte3" data-tab-id="3">
+				<div class="tab-title" data-tab-id="3">
 					<span><i class="fa fa-bell"></i></span>
 				</div>
-				<div class="tab-title tilte4" data-tab-id="4">
+				<div class="tab-title" data-tab-id="4">
 					<span><i class="fa fa-cog"></i></span>
 				</div>
-				<div class="tab-title tilte search">
+				<div class="search">
 				<span><i class="fa fa-search"></i></span>
 				</div>
 			</div>
