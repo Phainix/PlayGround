@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Tab CSS</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 		html, body {
@@ -78,14 +78,28 @@
 		    position: absolute;
 		    visibility: hidden;
 		    opacity: 0;
-		    padding: 30px;
+		    padding: 26px;
+		    display: flex;
+    		flex-direction: column;
 		}
 		.tab-content.active {
 			visibility: visible;
 			opacity: 1;
 		}
+		.content {
+		    flex: 1;
+		}
+		svg {
+		    width: 268px;
+		    height: 130px;
+		}
+		.polyline {
+			stroke: #eee;
+			stroke-width: 4px;
+		}
 		h5 {
 			margin: 0;
+			font-size: 16px;
 		}
 	</style>
 
@@ -115,6 +129,31 @@
 			<div class="tab-body">
 				<div class="tab-content active">
 					<h5>Dashboard</h5>
+					<div class="content">
+						<svg viewBox="0 0 268 130">
+							<polyline points="0,22 240,22" class="polyline">
+							</polyline>
+							<polyline points="0,32 260,32" class="polyline">
+							</polyline>
+							<polyline points="0,42 210,42" class="polyline">
+							</polyline>
+							<polyline points="0,52 268,52" class="polyline">
+							</polyline>
+							<polyline points="0,62 60,62" class="polyline">
+							</polyline>
+
+							<polyline points="0,82 264,82" class="polyline">
+							</polyline>
+							<polyline points="0,92 210,92" class="polyline">
+							</polyline>
+							<polyline points="0,102 230,102" class="polyline">
+							</polyline>
+							<polyline points="0,112 250,112" class="polyline">
+							</polyline>
+							<polyline points="0,122 160,122" class="polyline">
+							</polyline>
+						</svg>
+					</div>
 				</div>
 				<div class="tab-content">
 					<h5>Comments</h5>
