@@ -110,16 +110,16 @@
 	<div class="frame">
 		<div class="tab-container">
 			<div class="tab-header">
-				<div class="tab-title tilte1 active">
+				<div class="tab-title tilte1 active" data-tab-id="1">
 					<span><i class="fa fa-eye"></i></span>
 				</div>
-				<div class="tab-title tilte2">
+				<div class="tab-title tilte2" data-tab-id="2">
 					<span><i class="fa fa-comments"></i></span>
 				</div>
-				<div class="tab-title tilte3">
+				<div class="tab-title tilte3" data-tab-id="3">
 					<span><i class="fa fa-bell"></i></span>
 				</div>
-				<div class="tab-title tilte4">
+				<div class="tab-title tilte4" data-tab-id="4">
 					<span><i class="fa fa-cog"></i></span>
 				</div>
 				<div class="tab-title tilte search">
@@ -127,7 +127,7 @@
 				</div>
 			</div>
 			<div class="tab-body">
-				<div class="tab-content active">
+				<div class="tab-content active" id="tab-1">
 					<h5>Dashboard</h5>
 					<div class="content">
 						<svg viewBox="0 0 268 130">
@@ -155,17 +155,117 @@
 						</svg>
 					</div>
 				</div>
-				<div class="tab-content">
+				<div class="tab-content" id="tab-2">
 					<h5>Comments</h5>
+					<div class="content">
+						<svg viewBox="0 0 268 130">
+							<polyline points="0,22 240,22" class="polyline">
+							</polyline>
+							<polyline points="0,32 260,32" class="polyline">
+							</polyline>
+							<polyline points="0,42 210,42" class="polyline">
+							</polyline>
+							<polyline points="0,52 268,52" class="polyline">
+							</polyline>
+							<polyline points="0,62 60,62" class="polyline">
+							</polyline>
+
+							<polyline points="0,82 264,82" class="polyline">
+							</polyline>
+							<polyline points="0,92 210,92" class="polyline">
+							</polyline>
+							<polyline points="0,102 230,102" class="polyline">
+							</polyline>
+							<polyline points="0,112 250,112" class="polyline">
+							</polyline>
+							<polyline points="0,122 160,122" class="polyline">
+							</polyline>
+						</svg>
+					</div>
 				</div>
-				<div class="tab-content">
+				<div class="tab-content" id="tab-3">
 					<h5>Notifications</h5>
+					<div class="content">
+						<svg viewBox="0 0 268 130">
+							<polyline points="0,22 240,22" class="polyline">
+							</polyline>
+							<polyline points="0,32 260,32" class="polyline">
+							</polyline>
+							<polyline points="0,42 210,42" class="polyline">
+							</polyline>
+							<polyline points="0,52 268,52" class="polyline">
+							</polyline>
+							<polyline points="0,62 60,62" class="polyline">
+							</polyline>
+
+							<polyline points="0,82 264,82" class="polyline">
+							</polyline>
+							<polyline points="0,92 210,92" class="polyline">
+							</polyline>
+							<polyline points="0,102 230,102" class="polyline">
+							</polyline>
+							<polyline points="0,112 250,112" class="polyline">
+							</polyline>
+							<polyline points="0,122 160,122" class="polyline">
+							</polyline>
+						</svg>
+					</div>
 				</div>
-				<div class="tab-content">
+				<div class="tab-content" id="tab-4">
 					<h5>Settings</h5>
+					<div class="content">
+						<svg viewBox="0 0 268 130">
+							<polyline points="0,22 240,22" class="polyline">
+							</polyline>
+							<polyline points="0,32 260,32" class="polyline">
+							</polyline>
+							<polyline points="0,42 210,42" class="polyline">
+							</polyline>
+							<polyline points="0,52 268,52" class="polyline">
+							</polyline>
+							<polyline points="0,62 60,62" class="polyline">
+							</polyline>
+
+							<polyline points="0,82 264,82" class="polyline">
+							</polyline>
+							<polyline points="0,92 210,92" class="polyline">
+							</polyline>
+							<polyline points="0,102 230,102" class="polyline">
+							</polyline>
+							<polyline points="0,112 250,112" class="polyline">
+							</polyline>
+							<polyline points="0,122 160,122" class="polyline">
+							</polyline>
+						</svg>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script>
+		var removeActiveClass = function (className) {
+			var elements = document.getElementsByClassName(className);
+			for (var i = elements.length - 1; i >= 0; i--) {
+				var element = elements[i];
+				element.classList.remove('active');
+			}
+		};
+		var toggleTab = function() {
+			var id = this.getAttribute('data-tab-id');
+			console.log(id);
+			removeActiveClass('tab-title');
+			removeActiveClass('tab-content');
+
+			this.classList.add('active');
+			document.getElementById('tab-'+id).classList.add('active');
+		};
+
+		var tabs = document.getElementsByClassName('tab-title');
+		for (var i = tabs.length - 1; i >= 0; i--) {
+			var tab = tabs[i];
+			tab.addEventListener('click', toggleTab);
+		}
+	</script>
 </body>
 </html>
