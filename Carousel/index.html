@@ -66,27 +66,27 @@
 		}
 		.carousel-item:nth-of-type(1) {
 			transform: scale(.66) translateX(-152px);
-			animation: carousel1 6s infinite;
+			animation: carousel1 6s infinite ease-in-out;
 		}
 		.carousel-item:nth-of-type(2) {
-			animation: carousel2 6s infinite;
+			animation: carousel2 6s infinite ease-in-out;
 		}
 		.carousel-item:nth-of-type(3) {
-			transform: scale(.66) translateX(152px);
-			animation: carousel3 6s infinite;
+			transform: scale(.66) translateX(162px);
+			animation: carousel3 6s infinite ease-in-out;
 		}
 
 		@keyframes carousel1 {
-			0%,16% {
+			0%,10% {
 				transform: scale(.66) translateX(-152px);
 				z-index: 1;
 			}
-			33%,49% {
+			33%,43% {
 				transform: scale(1) translateX(0px);
 				z-index: 3;
 			}
-			66%,82% {
-				transform: scale(.66) translateX(152px);
+			66%,76% {
+				transform: scale(.66) translateX(162px);
 				z-index: 2;
 			}
 			100% {
@@ -96,15 +96,15 @@
 		}
 
 		@keyframes carousel2 {
-			0%,16% {
+			0%,10% {
 				transform: scale(1) translateX(0px);
 				z-index: 3;
 			}
-			33%,49% {
-				transform: scale(.66) translateX(152px);
+			33%,43% {
+				transform: scale(.66) translateX(162px);
 				z-index: 2;
 			}
-			66%,82% {
+			66%,76% {
 				transform: scale(.66) translateX(-152px);
 				z-index: 1;
 			}
@@ -115,22 +115,32 @@
 		}
 
 		@keyframes carousel3 {
-			0%,16% {
-				transform: scale(.66) translateX(152px);
+			0%,10% {
+				transform: scale(.66) translateX(162px);
 				z-index: 2;
 			}
-			33%,49% {
+			33%,43% {
 				transform: scale(.66) translateX(-152px);
 				z-index: 1;
 			}
-			66%,82% {
+			66%,76% {
 				transform: scale(1) translateX(0px);
 				z-index: 3;
 			}
 			100% {
-				transform: scale(.66) translateX(152px);
+				transform: scale(.66) translateX(162px);
 				z-index: 2;
 			}
+		}
+		.carousel {
+			width: 320px;
+		    height: 160px;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		}
+		.carousel:hover .carousel-item {
+			animation-play-state: paused;
 		}
 	</style>
 
@@ -139,67 +149,69 @@
 </head>
 <body>
 	<div class="frame">
-		<div class="carousel-item">
-			<div class="header">
-				
+		<div class="carousel">
+			<div class="carousel-item">
+				<div class="header">
+					
+				</div>
+				<div class="body">
+					<svg viewBox="0 0 110 50">
+						<polyline points="0,2 100,2" class="polyline">
+						</polyline>
+						<polyline points="0,14 90,14" class="polyline">
+						</polyline>
+						<polyline points="0,26 110,26" class="polyline">
+						</polyline>
+						<polyline points="0,38 80,38" class="polyline">
+						</polyline>
+						<polyline points="0,50 100,50" class="polyline">
+						</polyline>
+						<polyline points="0,62 60,62" class="polyline">
+						</polyline>
+					</svg>
+				</div>
 			</div>
-			<div class="body">
-				<svg viewBox="0 0 110 50">
-					<polyline points="0,2 100,2" class="polyline">
-					</polyline>
-					<polyline points="0,14 90,14" class="polyline">
-					</polyline>
-					<polyline points="0,26 110,26" class="polyline">
-					</polyline>
-					<polyline points="0,38 80,38" class="polyline">
-					</polyline>
-					<polyline points="0,50 100,50" class="polyline">
-					</polyline>
-					<polyline points="0,62 60,62" class="polyline">
-					</polyline>
-				</svg>
+			<div class="carousel-item">
+				<div class="header">
+					
+				</div>
+				<div class="body">
+					<svg viewBox="0 0 110 70">
+						<polyline points="0,2 100,2" class="polyline">
+						</polyline>
+						<polyline points="0,14 90,14" class="polyline">
+						</polyline>
+						<polyline points="0,26 110,26" class="polyline">
+						</polyline>
+						<polyline points="0,38 80,38" class="polyline">
+						</polyline>
+						<polyline points="0,50 100,50" class="polyline">
+						</polyline>
+						<polyline points="0,62 60,62" class="polyline">
+						</polyline>
+					</svg>
+				</div>
 			</div>
-		</div>
-		<div class="carousel-item">
-			<div class="header">
-				
-			</div>
-			<div class="body">
-				<svg viewBox="0 0 110 70">
-					<polyline points="0,2 100,2" class="polyline">
-					</polyline>
-					<polyline points="0,14 90,14" class="polyline">
-					</polyline>
-					<polyline points="0,26 110,26" class="polyline">
-					</polyline>
-					<polyline points="0,38 80,38" class="polyline">
-					</polyline>
-					<polyline points="0,50 100,50" class="polyline">
-					</polyline>
-					<polyline points="0,62 60,62" class="polyline">
-					</polyline>
-				</svg>
-			</div>
-		</div>
-		<div class="carousel-item">
-			<div class="header">
-				
-			</div>
-			<div class="body">
-				<svg viewBox="0 0 110 50">
-					<polyline points="0,2 100,2" class="polyline">
-					</polyline>
-					<polyline points="0,14 90,14" class="polyline">
-					</polyline>
-					<polyline points="0,26 110,26" class="polyline">
-					</polyline>
-					<polyline points="0,38 80,38" class="polyline">
-					</polyline>
-					<polyline points="0,50 100,50" class="polyline">
-					</polyline>
-					<polyline points="0,62 60,62" class="polyline">
-					</polyline>
-				</svg>
+			<div class="carousel-item">
+				<div class="header">
+					
+				</div>
+				<div class="body">
+					<svg viewBox="0 0 110 50">
+						<polyline points="0,2 100,2" class="polyline">
+						</polyline>
+						<polyline points="0,14 90,14" class="polyline">
+						</polyline>
+						<polyline points="0,26 110,26" class="polyline">
+						</polyline>
+						<polyline points="0,38 80,38" class="polyline">
+						</polyline>
+						<polyline points="0,50 100,50" class="polyline">
+						</polyline>
+						<polyline points="0,62 60,62" class="polyline">
+						</polyline>
+					</svg>
+				</div>
 			</div>
 		</div>
 	</div>
