@@ -1,6 +1,6 @@
-# 100 days of css day 3
+# 100 days of css day 37
 
-![Header/intro section ](../design/Layout.png)
+![Header/intro section ](../design/Carousel.png)
 
 ## Welcome! 👋 
 
