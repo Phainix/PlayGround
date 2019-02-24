@@ -35,6 +35,33 @@
 		* {
 			box-sizing: border-box;
 		}
+		.logo {
+			position: absolute;
+			cursor: pointer;
+		}
+		.logo:before, .logo:after {
+		    content: " ";
+		    position: absolute;
+		    width: 80px;
+		    height: 80px;
+		    background-color: #9b59b6;
+		    border-radius: 50%;
+		}
+		.logo:before {
+		    top: 10px;
+    		left: -46px;
+		}
+		.logo:after {
+		    top: 10px;
+    		left: 108px;
+		}
+		svg {
+			width: 140px;
+			height: 100px;
+		}
+		polygon {
+			stroke-linejoin: round;
+		}
 	</style>
 
 
@@ -42,9 +69,13 @@
 </head>
 <body>
 	<div class="frame">
-		<div class="logo-container">
-			
+
+		<div class="logo">
+			<svg viewBox="0 0 140 100">
+				<polygon points="70,0 140,40 140,60 70,100 0,60 0,40" fill="white"></polygon>
+			</svg>
 		</div>
+
 	</div>
 </body>
 </html>
