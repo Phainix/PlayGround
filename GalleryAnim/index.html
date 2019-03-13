@@ -137,17 +137,7 @@
 	<script>
 		var active = false;
 		var toggleActive = function() {
-			if(active) {
-				document.getElementById(active).classList.toggle('active');
-			}
 			this.classList.toggle('active');
-			// var oldactive = active;
-			// var newactive = this.getAttribute('id');
-			// console.log(active, newactive);
-			// if(oldactive != newactive) {
-			// 	this.classList.toggle('active');
-			// }
-			// active = newactive;
 		};
 		var items = document.getElementsByClassName('gallery-item');
 		for (var i = items.length - 1; i >= 0; i--) {
