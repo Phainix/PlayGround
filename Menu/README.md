@@ -1,12 +1,12 @@
-# 100 days of css day 3
+# 100 days of css day 39
 
-![Header/intro section ](../design/Layout.png)
+![Header/intro section ](../design/Menu.png)
 
 ## Welcome! 👋 
 
 Thanks for checking out this front-end coding challenge. 
 
-**This challenge was implemented with HTML and CSS.**
+**This challenge was implemented with HTML, CSS and Javascript.**
 
 ## My CodePen
-https://codepen.io/phainix/pen
+https://codepen.io/phainix/pen/jJYxKW
